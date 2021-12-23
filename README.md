@@ -12,6 +12,5 @@ Powered by ©SaminSumesh
 * API_HASH - Get from my.telegram.org
 * BOT_TOKEN - Get from @botfather
 '''
-
 # Credits 
 <a href="https://t.me/paulwalker_tg">PaulWalker</a>
