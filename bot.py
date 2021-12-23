@@ -5,7 +5,7 @@ Bot = Client(
 "Simple pyrogram bot",
 bot_token = os.environ.get("BOT_TOKEN"),
 api_hash = os.enivron.get("API_HASH"),
-api_key = int(os.environ.get("API_KEY"))
+api_id = int(os.environ.get("API_ID"))
         )
 
 @Bot.on_message(filters.private & filters.command(["start"]))
