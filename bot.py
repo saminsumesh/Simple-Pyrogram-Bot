@@ -11,7 +11,7 @@ api_key = os.environ.get("API_KEY")
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
-    text=f"HI {update.from_user.mention}"
-    )
+    text=f"HI {update.from_user.mention}
+  )
     
     Bot.run()
