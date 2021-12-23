@@ -8,7 +8,7 @@ api_hash = int(os.enivron.get("API_HASH"),
 api_key = os.environ.get("API_KEY")
         )
 
-@Client.on_message(filters.private & filters.command(["start"]))
+@Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
     text=f"HI {update.from_user.mention}"
