@@ -1,10 +1,10 @@
-from os import environ
+import os
 from pyrogram import Client, filters
 
 Bot = Client(
 "Simple pyrogram bot",
 bot_token = os.environ.get("BOT_TOKEN"),
-api_hash = os.enivron.get("API_HASH"),
+api_hash = os.environ.get("API_HASH"),
 api_id = int(os.environ.get("API_ID"))
         )
 
