@@ -31,6 +31,7 @@ async def help(bot, update):
 @Bot.on_message(filters.private & filters.command(["about"]))
 async def about(bot, update):
     await update.reply_text(
-    text=ABOUT_TXT
+    text=ABOUT_TXT,
+    disable_web_page_preview=True
     )
 Bot.run()
