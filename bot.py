@@ -28,12 +28,13 @@ async def start(bot, update):
     await update.reply_photo(
         photo="AgACAgUAAxkBAAIrs2XOfBVlVcWYmUrJgTPPcDBCyvDbAAKytzEb9kZoVpVajrBFYePXAQADAgADeQADNAQ",
         caption=START_TXT.format(update.from_user.mention),
-        reply_markup=InlineKeyboardMarkup(
+        reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
                 InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
                 ],[
                 InlineKeyboardButton("Help ❓", callback_data="help"),
                 InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
+                ]]
         )
     )
 @Bot.on_callback_query()
@@ -45,12 +46,13 @@ async def cb_buttons(bot, CallbackQuery):
                 await bot.reply_photo(
                         photo="AgACAgUAAxkBAAIrs2XOfBVlVcWYmUrJgTPPcDBCyvDbAAKytzEb9kZoVpVajrBFYePXAQADAgADeQADNAQ",
                         caption=START_TXT.format(bot.from_user.mention),
-                        reply_markup=InlineKeyboardMarkup(
+                        reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
                 InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
-                ][
+                ],[
                 InlineKeyboardButton("Help ❓", callback_data="help"),
                 InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
+                ]]
                 )
         elif query.data == "demo":
                 await bot.reply_photo(
