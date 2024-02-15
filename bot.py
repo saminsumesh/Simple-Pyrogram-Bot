@@ -38,25 +38,25 @@ async def start(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await update.reply_text("Error 304",
+        await update.message.edit("Error 304",
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 
 @Bot.on_callback_query(filters.regex("group"))
 async def group(bot, update):
-        await update.reply_text(
+        await update.message.edit(
                 text=GROUP_TXT,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")]])
         )
 @Bot.on_callback_query(filters.regex("help"))
 async def help(bot, update):
-        await update.reply_text(
+        await update.message.edit(
                 text = HELP_TXT,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 @Bot.on_callback_query(filters.regex("admin"))
 async def admin(bot, update):
-        await update.reply_text(
+        await update.message.edit(
                 text = "**📩 Message To Admin @hxhall"
         )
 Bot.run()
