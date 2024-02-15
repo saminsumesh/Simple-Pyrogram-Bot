@@ -38,6 +38,16 @@ async def start(bot, update):
                 ]]
         )
     )
+@Bot.on_message(filters.private & filters.command(["file_id"]))
+async def media_id_handler(client, message: Message):
+    if message.from_user not message.reply_to_message:
+            await bot.reply_text("Reply to something")
+else:
+    media = getattr(message, message.media.value)
+    await message.reply_text(
+        f"<code> {media.file_id} </code>", parse_mode=ParseMode.HTML, quote=True
+    )
+        
 @Bot.on_callback_query(filters.regex("start"))
 async def back(bot, update):
     await update.reply_text(
