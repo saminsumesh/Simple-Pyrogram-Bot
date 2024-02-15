@@ -11,7 +11,7 @@ api_id = int(os.environ.get("API_ID"))
 
 
 ABOUT_TXT = """ 
-× **Name** : [തെൻകുടം VIP Bot](https://t.me/gourihellobot)
+× **Name** : [തെൻകുടം VIP Bot](https://t.me/thenkudamvipbot)
 
 """
 START_TXT = """
@@ -59,6 +59,6 @@ async def cb_buttons(bot, CallbackQuery):
                 await bot.reply_photo(
                         photo="AgACAgUAAxkBAAIruGXOg16e38HqPSkmAAHQAAEoRWwx7_EAApG7MRsCnuhVKIeKGNzikusBAAMCAAN5AAM0BA"                        
                 )
+        else return
             
-
-    
+Bot.run()
