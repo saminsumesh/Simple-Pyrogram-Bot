@@ -59,7 +59,6 @@ async def cb_buttons(bot, CallbackQuery):
                 await bot.reply_photo(
                         photo="AgACAgUAAxkBAAIruGXOg16e38HqPSkmAAHQAAEoRWwx7_EAApG7MRsCnuhVKIeKGNzikusBAAMCAAN5AAM0BA"                        
                 )
-        else :
-                return
+        else return:
             
 Bot.run()
