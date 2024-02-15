@@ -40,7 +40,7 @@ async def start(bot, update):
     )
 
 @Bot.on_message(filters.forwarded & filters.media)
-async def media_id_handler(client, message: Message):
+async def media_id_handler(client, message):
     media = getattr(message, message.media.value)
     await message.reply_text(
         f"<code> {media.file_id} </code>", parse_mode=ParseMode.HTML, quote=True
