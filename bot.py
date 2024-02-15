@@ -1,6 +1,7 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.enums import ParseMode
 
 Bot = Client(
 "Simple pyrogram bot",
@@ -48,7 +49,7 @@ async def media_id_handler(client, message):
         
 @Bot.on_callback_query(filters.regex("start"))
 async def back(bot, update):
-    await update.reply_text(
+    await update.message.edit(
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
