@@ -25,7 +25,7 @@ HELP_TXT = """
 """
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
-    await update.reply_message(
+    await update.reply_to_message(
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
@@ -38,25 +38,25 @@ async def start(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await update.reply_message(
+        await update.reply_to_message(
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 
 @Bot.on_callback_query(filters.regex("group"))
 async def group(bot, update):
-        await update.reply_message(
+        await update.reply_to_message(
                 text=GROUP_TXT,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")]])
         )
 @Bot.on_callback_query(filters.regex("help"))
 async def help(bot, update):
-        await update.reply_message(
+        await update.reply_to_message(
                 text = HELP_TXT,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 @Bot.on_callback_query(filters.regex("admin"))
 async def admin(bot, update):
-        await update.reply_message(
+        await update.reply_to_message(
                 text = "**📩 Message To Admin @hxhall"
         )
 Bot.run()
