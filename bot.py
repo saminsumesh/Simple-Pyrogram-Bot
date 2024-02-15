@@ -9,7 +9,9 @@ api_hash = os.environ.get("API_HASH"),
 api_id = int(os.environ.get("API_ID"))
         )
 
+GROUP_TXT = """
 
+"""
 ABOUT_TXT = """ 
 × **Name** : [തെൻകുടം VIP Bot](https://t.me/thenkudamvipbot)
 
@@ -25,6 +27,19 @@ HELP_TXT = """
 """
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
+    await update.reply_text(
+        text=START_TXT.format(update.from_user.mention),
+        reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
+                InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
+                ],[
+                InlineKeyboardButton("Help ❓", callback_data="help"),
+                InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
+                ]]
+        )
+    )
+@Bot.on_callback_query(filters.regex("start"))
+async def back(bot, update):
     await update.reply_text(
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
