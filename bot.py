@@ -37,28 +37,28 @@ async def start(bot, update):
                 ]]
         )
     )
-@Bot.on_callback_query()
-async def cb_buttons(bot, CallbackQuery):
-        if query.data == "help":
-                await bot.reply_message(HELP_TEXT),
-                reply_markup = InlinekeyboadMarkup(InlineKeyboardButton("Back 🔙", callback_data="start")),
-        elif query.data == "start":
-                await bot.reply_photo(
-                        photo="AgACAgUAAxkBAAIrs2XOfBVlVcWYmUrJgTPPcDBCyvDbAAKytzEb9kZoVpVajrBFYePXAQADAgADeQADNAQ",
-                        caption=START_TXT.format(bot.from_user.mention),
-                        reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
-                InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
-                ],[
-                InlineKeyboardButton("Help ❓", callback_data="help"),
-                InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
-                ]]
-                )
-                )
-        elif query.data == "demo":
-                await bot.reply_photo(
-                        photo="AgACAgUAAxkBAAIruGXOg16e38HqPSkmAAHQAAEoRWwx7_EAApG7MRsCnuhVKIeKGNzikusBAAMCAAN5AAM0BA"                        
-                )
-        else return:
-            
+@Bot.on_callback_query(filters.regex("demo"))
+async def about(bot, update):
+        await update.reply_photo(
+                photo = "AgACAgUAAxkBAAIruGXOg16e38HqPSkmAAHQAAEoRWwx7_EAApG7MRsCnuhVKIeKGNzikusBAAMCAAN5AAM0BA",
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
+        )
+
+@Bot.on_callback_query(filters.regex("group"))
+async def group(bot, update):
+        await update.reply_message(
+                text=GROUP_TXT,
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")]])
+        )
+@Bot.on_callback_query(filters.regex("help"))
+async def help(bot, update):
+        await update.reply_message(
+                text = HELP_TXT,
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
+        )
+@Bot.on_callback_query(filters.regex("admin"))
+async def admin(bot, update):
+        await update.reply_message(
+                text = "**📩 Message To Admin @hxhall"
+        )
 Bot.run()
