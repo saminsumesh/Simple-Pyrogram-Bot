@@ -54,6 +54,7 @@ async def cb_buttons(bot, CallbackQuery):
                 InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
                 ]]
                 )
+                )
         elif query.data == "demo":
                 await bot.reply_photo(
                         photo="AgACAgUAAxkBAAIruGXOg16e38HqPSkmAAHQAAEoRWwx7_EAApG7MRsCnuhVKIeKGNzikusBAAMCAAN5AAM0BA"                        
