@@ -31,7 +31,7 @@ async def start(bot, update):
         reply_markup=InlineKeyboardMarkup(
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
                 InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
-                ][
+                ],[
                 InlineKeyboardButton("Help ❓", callback_data="help"),
                 InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
         )
