@@ -25,7 +25,7 @@ HELP_TXT = """
 """
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
-    await update.reply_photo(
+    await update.send_photo(
         photo = "AgACAgUAAxkBAAECNkplzo1lbUBtQGQZk1xbWuVa0IhK5gACDb4xGz5bcVYR4pBbbal2YwEAAwIAA3kAAzQE",
         caption=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
@@ -39,7 +39,7 @@ async def start(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await update.reply_photo(
+        await update.send_photo(
                 photo = "AgACAgUAAxkBAAECNk5lzo2XP-FJJtZRKP_41zniwa4cogACkbsxGwKe6FWv-G_a-FLd-AEAAwIAA3kAAzQE",
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
