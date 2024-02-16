@@ -27,7 +27,7 @@ Welcome to Thenkudam VIP BOT 🍑**
 HELP_TXT = """
 🇬🇧 __ENGLISH__
 **• YOU CAN PURCHASE VIP ACCESS OF OUR THENKUDAM VIP CHANNEL 🍑.**\n
-🇮🇳 __INDIA__
+🇮🇳 __MALAYALAM__
 **• തെൻകുടം ചാനലിൻ്റെ VIP നിങ്ങൾക്ക് ഈ ബോട്ട് വഴി എടുക്കാം 🍑.**\n
 🇮🇳 __HINDI__
 **• Tobe Added 🔜**
@@ -71,8 +71,8 @@ async def back(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E", chat_id=update.from_user.id,
-               reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Back 🔙", callback_data="start")]])
+        await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E", caption="Demo 🍑",chat_id=update.from_user.id,
+               reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Delete ❌", callback_data="del")]])
         )
 
 @Bot.on_callback_query(filters.regex("group"))
@@ -81,6 +81,10 @@ async def group(bot, update):
                 text=GROUP_TXT,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")]])
         )
+@Bot.on_callback_query(filters.regex("del"))
+async def delete(bot, update):
+        await update.message.delete()
+        
 @Bot.on_callback_query(filters.regex("help"))
 async def help(bot, update):
         await update.message.edit(
