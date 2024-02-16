@@ -73,8 +73,10 @@ async def media_id_handler(client, message):
         
 @Bot.on_callback_query(filters.regex("start"))
 async def back(bot, update):
-    await update.message.edit(
-        text=START_TXT.format(update.from_user.mention),
+    await bot.send_photo(
+        photo=START_PIC,
+        caption=START_TXT.format(update.from_user.mention),
+        chat_id=update.from_user.id,
         reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo")
         ],[
