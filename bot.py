@@ -9,6 +9,7 @@ bot_token = os.environ.get("BOT_TOKEN"),
 api_hash = os.environ.get("API_HASH"),
 api_id = int(os.environ.get("API_ID"))
         )
+#Variables
 
 START_PIC = "AgACAgUAAxkBAAPPZc6ljMGDAAH2fl4RPxTBR7oonoidAAINvjEbPltxVt4mOfli4nbVAAgBAAMCAAN5AAceBA"
 
@@ -47,6 +48,11 @@ HELP_TXT = """
 🇮🇳 __HINDI__
 **• Tobe Added 🔜**
 """
+ADMIN = "6922136309"
+
+
+#--------------------Codes--------------------/*\
+
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_photo(
@@ -64,7 +70,7 @@ async def start(bot, update):
         )
     )
 
-@Bot.on_message(filters.forwarded & filters.media)
+@Bot.on_message(filters.forwarded & filters.media & filters.user(ADMIN))
 async def media_id_handler(client, message):
     media = getattr(message, message.media.value)
     await message.reply_text(
