@@ -107,6 +107,7 @@ async def help(bot, update):
 @Bot.on_callback_query(filters.regex("admin"))
 async def admin(bot, update):
         await update.message.edit(
-                text = "**📩 Message To Admin @hxhall"
+                text = "**📩 Message To Admin @hxhall",
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 Bot.run()
