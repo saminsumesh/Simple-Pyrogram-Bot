@@ -71,7 +71,7 @@ async def back(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await update.reply_photo(luuum"",
+        await update.reply_photo("j",
                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 
