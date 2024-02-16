@@ -13,7 +13,20 @@ api_id = int(os.environ.get("API_ID"))
 START_PIC = "AgACAgUAAxkBAAPPZc6ljMGDAAH2fl4RPxTBR7oonoidAAINvjEbPltxVt4mOfli4nbVAAgBAAMCAAN5AAceBA"
 
 GROUP_TXT = """
+**__⚜️ MEMBERSHIPS DETAILS ⚜️__**
 
+ 
+**• തെൻകുടം പ്രീമിയം 🔕**
+ = __100 Rs__
+
+**• Leaked Videos Only 🍑🍌**
+ =  __100 Rs__
+
+**• തെൻകുടം Unlimited 🍑🔞**
+= __100 Rs__
+
+**• തെൻകുടം MALLU ONLY 🔞**
+= __150 Rs__
 """
 ABOUT_TXT = """ 
 × **Name** : [തെൻകുടം VIP Bot](https://t.me/thenkudamvipbot)
