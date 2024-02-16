@@ -20,11 +20,12 @@ ABOUT_TXT = """
 
 """
 START_TXT = """
-Hi {} , Welcome to Thenkudam VIP BOT
+**Hi {} ,\n
+Welcome to Thenkudam VIP BOT**
 """
 
 HELP_TXT = """
-• YOU CAN PURCHASE VIP ACCESS OF OUR THENKUDAM VIP CHANNEL 🍑.
+• YOU CAN PURCHASE VIP ACCESS OF OUR THENKUDAM VIP CHANNEL 🍑.\n
 • തെൻകുടം ചാനലിൻ്റെ VIP നിങ്ങൾക്ക് ഈ ബോട്ട് വഴി എടുക്കാം 🍑.
 
 """
@@ -34,11 +35,9 @@ async def start(bot, update):
         photo=START_PIC,
         caption=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
-                InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
-                ],[
-                InlineKeyboardButton("Help ❓", callback_data="help"),
-                InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
+                InlineKeyboardButton("**ഫ്രീ ഡെമോ 🍑**", callback_data="demo"),
+                InlineKeyboardButton("**വീഡിയോസ് ഗ്രൂപ്പ് 🔞**", callback_data="group"),
+                InlineKeyboardButton("**Admin 👮‍♂️**", callback_data="admin"),
                 ]]
         )
     )
