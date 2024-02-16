@@ -20,14 +20,17 @@ ABOUT_TXT = """
 
 """
 START_TXT = """
-**Hi {} ,\n
-Welcome to Thenkudam VIP BOT**
+**Hi {} 🌝,\n
+Welcome to Thenkudam VIP BOT 🍑**
 """
 
 HELP_TXT = """
-• YOU CAN PURCHASE VIP ACCESS OF OUR THENKUDAM VIP CHANNEL 🍑.\n
-• തെൻകുടം ചാനലിൻ്റെ VIP നിങ്ങൾക്ക് ഈ ബോട്ട് വഴി എടുക്കാം 🍑.
-
+🇬🇧 __ENGLISH__
+**• YOU CAN PURCHASE VIP ACCESS OF OUR THENKUDAM VIP CHANNEL 🍑.**\n
+🇮🇳 __INDIA__
+**• തെൻകുടം ചാനലിൻ്റെ VIP നിങ്ങൾക്ക് ഈ ബോട്ട് വഴി എടുക്കാം 🍑.**\n
+🇮🇳 __HINDI__
+**• Tobe Added 🔜**
 """
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
@@ -68,8 +71,8 @@ async def back(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await update.message.edit("Error 304",
-                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
+        await update.reply_photo,luuum"",
+               km reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 
 @Bot.on_callback_query(filters.regex("group"))
