@@ -10,6 +10,8 @@ api_hash = os.environ.get("API_HASH"),
 api_id = int(os.environ.get("API_ID"))
         )
 
+START_PIC = "AgACAgUAAxkBAAPPZc6ljMGDAAH2fl4RPxTBR7oonoidAAINvjEbPltxVt4mOfli4nbVAAgBAAMCAAN5AAceBA"
+
 GROUP_TXT = """
 
 """
@@ -28,8 +30,9 @@ HELP_TXT = """
 """
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
-    await update.reply_text(
-        text=START_TXT.format(update.from_user.mention),
+    await update.reply_photo(
+        photo=START_PIC,
+        caption=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
                 InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
