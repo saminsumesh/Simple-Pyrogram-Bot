@@ -71,7 +71,7 @@ async def back(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E", chat_id=user.chat_id,
+        await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E", chat_id=update.from_user.id,
                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 
