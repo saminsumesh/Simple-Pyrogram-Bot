@@ -56,10 +56,12 @@ async def back(bot, update):
     await update.message.edit(
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo"),
+                InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo")
+        ],[
                 InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
                 ],[
                 InlineKeyboardButton("Help ❓", callback_data="help"),
+],[
                 InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
                 ]]
         )
