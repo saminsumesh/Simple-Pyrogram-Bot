@@ -36,9 +36,9 @@ async def start(bot, update):
         caption=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("<b>ഫ്രീ ഡെമോ 🍑</b>", callback_data="demo")
-                ],
-                InlineKeyboardButton("<b>വീഡിയോസ് ഗ്രൂപ്പ് 🔞</b>", callback_data="group"),
-                [
+                ],[
+                InlineKeyboardButton("<b>വീഡിയോസ് ഗ്രൂപ്പ് 🔞</b>", callback_data="group")
+        ],[
                 InlineKeyboardButton("<b>Admin 👮‍♂️</b>", callback_data="admin"),
                 ]]
         )
