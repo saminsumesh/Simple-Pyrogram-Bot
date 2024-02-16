@@ -71,8 +71,8 @@ async def back(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await bot.send_photo("AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E",
-               reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
+        await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E",
+               reply_markup = InlineKeyboardMarkup([[InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 
 @Bot.on_callback_query(filters.regex("group"))
