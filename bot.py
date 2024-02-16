@@ -34,7 +34,9 @@ ABOUT_TXT = """
 """
 START_TXT = """
 **Hi {} 🌝,\n
-Welcome to Thenkudam VIP BOT 🍑**
+Welcome to Thenkudam VIP BOT 🍑**\n
+
+**__Premium Thund Bot__**
 """
 
 HELP_TXT = """
@@ -54,7 +56,9 @@ async def start(bot, update):
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo")
                 ],[
                 InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
-        ],[
+                ],[
+                InlineKeyboardButton("Help ❓", callback_data="help")
+                ],[
                 InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
                 ]]
         )
@@ -85,14 +89,14 @@ async def back(bot, update):
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
         await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E", caption="Demo 🍑",chat_id=update.from_user.id,
-               reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Delete ❌", callback_data="del")]])
+               reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Back 🔙", callback_data="del")]])
         )
 
 @Bot.on_callback_query(filters.regex("group"))
 async def group(bot, update):
         await bot.send_message(
                 text=GROUP_TXT, chat_id=update.from_user.id,
-                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")]])
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")],[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 @Bot.on_callback_query(filters.regex("del"))
 async def delete(bot, update):
@@ -100,14 +104,14 @@ async def delete(bot, update):
         
 @Bot.on_callback_query(filters.regex("help"))
 async def help(bot, update):
-        await update.message.edit(
-                text = HELP_TXT,
+        await bot.send_message(
+                text = HELP_TXT, chat_id=update.from_user.id,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 @Bot.on_callback_query(filters.regex("admin"))
 async def admin(bot, update):
-        await update.message.edit(
-                text = "**📩 Message To Admin @hxhall",
+        await bot.send_message(
+                text = "**📩 Message To Admin @hxhall", chat_id=update.from_user.id,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
         )
 Bot.run()
