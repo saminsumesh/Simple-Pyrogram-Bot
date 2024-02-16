@@ -90,8 +90,8 @@ async def about(bot, update):
 
 @Bot.on_callback_query(filters.regex("group"))
 async def group(bot, update):
-        await update.message.edit(
-                text=GROUP_TXT,
+        await bot.send_message(
+                text=GROUP_TXT, chat_id=update.from_user.id,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Demo 🍑", callback_data="demo")]])
         )
 @Bot.on_callback_query(filters.regex("del"))
