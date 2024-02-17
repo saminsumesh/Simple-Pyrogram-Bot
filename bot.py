@@ -148,7 +148,7 @@ async def pay_fdone(bot, update):
 
 @Bot.on_message(filters.media)
 async def frwd(bot, update):
-        await bot.forward_messages(chat_id=int(6922136309), from_chat_id=update.from_user.id)
+        await bot.forward_messages(chat_id=int(6922136309), from_chat_id=update.from_user.id,message_ids=update.id)
                 
 
         
