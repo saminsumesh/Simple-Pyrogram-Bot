@@ -126,7 +126,7 @@ async def admin(bot, update):
                 text = "**📩 Message To Admin @hxhall", chat_id=update.from_user.id,
                 reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="del")]])
         )
-@Bot.on_callback_query(filters.regex('qr_data') & filters.media)
+@Bot.on_callback_query(filters.regex('qr_data'))
 async def qr(bot, update):
         await bot.send_photo(
                 photo="AgACAgUAAxkBAAIBXGXP75pP7nsScwniWuKFTjF15ix2AALCujEb_HWAVvHZil_y3gdWAAgBAAMCAAN4AAceBA",
