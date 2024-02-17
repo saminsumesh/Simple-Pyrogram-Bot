@@ -120,7 +120,7 @@ async def help(bot, update):
 async def admin(bot, update):
         await bot.send_message(
                 text = "**📩 Message To Admin @hxhall", chat_id=update.from_user.id,
-                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="start")]])
+                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Back 🔙", callback_data="del")]])
         )
 @Bot.on_callback_query(filters.regex('qr_data'))
 async def qr(bot, update):
@@ -130,7 +130,7 @@ async def qr(bot, update):
                 chat_id=update.from_user.id
         )
         await bot.send_message(
-                text="__UPI Payment__\n • 🇬🇧**ENGLISH**\n- For UPI Payment use the pay now button and you will be redirected to UPI apps which is installed on your device.\n• 🇮🇳 **MALAYALAM**\n- UPI വഴി പണം അടച്ച് ഒരു പ്രീമിയം user അവൻ താഴേ കൊടുത്തിട്ടുള്ള 'Pay Now' button ക്ലിക്ക് ചെയ്ത് നിങ്ങളുടെ ഫോണിൽ ഉള്ള UPI അപ്പ് വഴി പണം അടച്ച് അതിൻ്റെ screenshot ബോട്ടിൽ സബ്മിറ്റ് ചെയ്യുക./n⚠️ After completion of your successful transaction please send the screenshot to the bot for verifying ⚠️",
+                text="__UPI Payment__\n\n • 🇬🇧**ENGLISH**\n\n- For UPI Payment use the pay now button and you will be redirected to UPI apps which is installed on your device.\n\n• 🇮🇳 **MALAYALAM**\n- UPI വഴി പണം അടച്ച് ഒരു പ്രീമിയം user അവൻ താഴേ കൊടുത്തിട്ടുള്ള 'Pay Now' button ക്ലിക്ക് ചെയ്ത് നിങ്ങളുടെ ഫോണിൽ ഉള്ള UPI അപ്പ് വഴി പണം അടച്ച് അതിൻ്റെ screenshot ബോട്ടിൽ സബ്മിറ്റ് ചെയ്യുക.\n⚠️ After completion of your successful transaction please send the screenshot to the bot for verifying ⚠️",
                 reply_markup= InlineKeyboardMarkup([[InlineKeyboardButton("Pay Now 💸", url="https://www.upilinks.in/payment-link/upi827941996")],[InlineKeyboardButton("Back ↪️", callback_data="start"),InlineKeyboardButton("Help 👤", callback_data="admin")]]),
                 chat_id=update.from_user.id
         )
