@@ -135,7 +135,7 @@ async def qr(bot, update):
         )
         await bot.send_message(
                 text="__UPI Payment__\n\n • 🇬🇧**ENGLISH**\n\n- For UPI Payment use the pay now button and you will be redirected to UPI apps which is installed on your device.\n\n• 🇮🇳 **MALAYALAM**\n\n- UPI വഴി പണം അടച്ച് ഒരു പ്രീമിയം user അവൻ താഴേ കൊടുത്തിട്ടുള്ള 'Pay Now' button ക്ലിക്ക് ചെയ്ത് നിങ്ങളുടെ ഫോണിൽ ഉള്ള UPI അപ്പ് വഴി പണം അടച്ച് അതിൻ്റെ screenshot **ADMIN** അയക്കു.\n\n• Please note:⚠️ After completion of your successful transaction please send the screenshot to @hxhall for verifying ⚠️",
-                reply_markup= InlineKeyboardMarkup([[InlineKeyboardButton("Pay Now 💸", url="https://www.upilinks.in/payment-link/upi827941996")],[InlineKeyboardButton("Back ↪️", callback_data="start"),InlineKeyboardButton("Contact Admin 👤", callback_data="admin")]]),
+                reply_markup= InlineKeyboardMarkup([[InlineKeyboardButton("Pay Now 💸", url="https://www.upilinks.in/payment-link/upi827941996")],[InlineKeyboardButton("Payment Done ✅", callback_data="pay_fdone")]]),
                 chat_id=update.from_user.id
         )
         
