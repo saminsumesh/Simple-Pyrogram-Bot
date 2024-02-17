@@ -148,8 +148,12 @@ async def pay_fdone(bot, update):
 
 @Bot.on_message(filters.media)
 async def frwd(bot, update):
-        await bot.forward_messages(chat_id=int(6922136309), from_chat_id=update.from_user.id,message_ids=update.id)
-                
-
+         await bot.forward_messages(chat_id=int(6922136309), from_chat_id=update.from_user.id,message_ids=update.id)
+         await bot.send_message(text="📩 നിങ്ങളുടെ ഇടപാട് സ്വീകരിച്ചിരിക്കുന്നു. വെരിഫിക്കേഷൻ കഴിയുന്നതിനായി കാത്തിരിക്കുക", chat_id=update.from_user.id)
         
+               
+
+
+
+
 Bot.run()
