@@ -139,6 +139,17 @@ async def qr(bot, update):
                 chat_id=update.from_user.id
         )
         
-        
+@Bot.on_callback_query(filters.regex('pay_fdone'))
+async def pay_fdone(bot, update):
+        await bot.send_message(
+                text="Send the screenshot of payment without crop / don't send document type. send normal proof⚠️",
+                chat_id=update.from_user.id
+        )
+
+@Bot.on_message(filters.media)
+async def frwd(bot, update):
+        await bot.forward_messages(chat_id=int(6922136309), from_chat_id=update.from_user.id)
+                
+
         
 Bot.run()
