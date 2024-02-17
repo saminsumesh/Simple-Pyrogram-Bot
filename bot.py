@@ -13,6 +13,10 @@ api_id = int(os.environ.get("API_ID"))
 
 START_PIC = "AgACAgUAAxkBAAPPZc6ljMGDAAH2fl4RPxTBR7oonoidAAINvjEbPltxVt4mOfli4nbVAAgBAAMCAAN5AAceBA"
 
+QR_TXT = """
+Superbb..!! {} 👍, നിങ്ങൾക്ക് ആവശ്യം ഉള്ള പ്ലാൻ തുക താഴെ കാണുന്ന QR കോഡ് / UPI 🆔 ഉപയോഗിച്ച് അടക്കുക
+"""
+
 GROUP_TXT = """
 **__⚜️ MEMBERSHIPS DETAILS ⚜️__**
 
@@ -126,7 +130,7 @@ async def admin(bot, update):
 async def qr(bot, update):
         await bot.send_photo(
                 photo="AgACAgUAAxkBAAIBXGXP75pP7nsScwniWuKFTjF15ix2AALCujEb_HWAVvHZil_y3gdWAAgBAAMCAAN4AAceBA",
-                caption="Superbb..!! {update.from_user.mention} 👍, നിങ്ങൾക്ക് ആവശ്യം ഉള്ള പ്ലാൻ തുക താഴെ കാണുന്ന QR കോഡ് / UPI 🆔 ഉപയോഗിച്ച് അടക്കുക",
+                caption=QR_TXT.format(update.from_user.mention),
                 chat_id=update.from_user.id
         )
         await bot.send_message(
