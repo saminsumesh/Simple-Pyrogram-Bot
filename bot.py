@@ -13,9 +13,7 @@ api_id = int(os.environ.get("API_ID"))
 
 START_PIC = "AgACAgUAAxkBAAECOwFl52HxjfAOqxufAAHERWPhaKiMVRYAAvi-MRtrYEFXtauhh8XPQqcBAAMCAAN5AAM0BA"
 
-DEMO_PIC = "AgACAgUAAxkBAAECOw1l52J9RPNercDDNSI-2UoYH75ZOAAC-r4xG2tgQVcJBDigP808bAEAAwIAA3kAAzQE",
-           "AgACAgUAAxkBAAECOwll52J0ZExR1OHOdbtNN3x18D3KUgAC-b4xG2tgQVe1Ilohx3RCBAEAAwIAA3kAAzQE"
-
+DEMO_PIC = "AgACAgUAAxkBAAECOw1l52J9RPNercDDNSI-2UoYH75ZOAAC-r4xG2tgQVcJBDigP808bAEAAwIAA3kAAzQE"
 
 QR_TXT = """
 Superbb..!! {} 👍, നിങ്ങൾക്ക് ആവശ്യം ഉള്ള പ്ലാൻ തുക താഴെ കാണുന്ന QR കോഡ് / UPI 🆔 ഉപയോഗിച്ച് അടക്കുക
