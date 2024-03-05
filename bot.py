@@ -11,7 +11,7 @@ api_id = int(os.environ.get("API_ID"))
         )
 #Variables
 
-START_PIC = "AgACAgUAAxkBAAPPZc6ljMGDAAH2fl4RPxTBR7oonoidAAINvjEbPltxVt4mOfli4nbVAAgBAAMCAAN5AAceBA"
+START_PIC = "AgACAgUAAxkBAAIxzWXnSlZyzFAgrdIabWIDBfKujQVOAAK-vDEboZQ4V8sR1mOEFekAAQEAAwIAA3kAAzQE"
 
 QR_TXT = """
 Superbb..!! {} 👍, നിങ്ങൾക്ക് ആവശ്യം ഉള്ള പ്ലാൻ തുക താഴെ കാണുന്ന QR കോഡ് / UPI 🆔 ഉപയോഗിച്ച് അടക്കുക
@@ -100,7 +100,7 @@ async def back(bot, update):
     )
 @Bot.on_callback_query(filters.regex("demo"))
 async def about(bot, update):
-        await bot.send_photo(photo="AgACAgUAAxkBAAP4Zc6vpwbfBRUixIKZ7VKdpEjumlQAApG7MRsCnuhVyeY12951ljoACAEAAwIAA3kABx4E", caption="Demo 🍑",chat_id=update.from_user.id,
+        await bot.send_photo(photo="", caption="Demo 🍑",chat_id=update.from_user.id,
                reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Pay 💸", callback_data="qr_data"), InlineKeyboardButton("Back 🔙", callback_data="del")]])
         )
 
