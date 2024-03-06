@@ -54,14 +54,14 @@ HELP_TXT = """
 🇮🇳 __HINDI__
 **• Tobe Added 🔜**
 """
-ADMIN = 6922136309
+ADMIN = 6841073728
 
 
 #--------------------Codes--------------------/*\
 
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
-    await update.reply_message(
+    await update.reply_to_message(
      #   photo=START_PIC,
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
