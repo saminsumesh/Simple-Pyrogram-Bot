@@ -11,9 +11,9 @@ api_id = int(os.environ.get("API_ID"))
         )
 #Variables
 
-START_PIC = "AgACAgUAAxkBAAECOwFl52HxjfAOqxufAAHERWPhaKiMVRYAAvi-MRtrYEFXtauhh8XPQqcBAAMCAAN5AAM0BA"
+#START_PIC = "AgACAgUAAxkBAAECOwFl52HxjfAOqxufAAHERWPhaKiMVRYAAvi-MRtrYEFXtauhh8XPQqcBAAMCAAN5AAM0BA"
 
-DEMO_PIC = "AgACAgUAAxkBAAECOw1l52J9RPNercDDNSI-2UoYH75ZOAAC-r4xG2tgQVcJBDigP808bAEAAwIAA3kAAzQE"
+#DEMO_PIC = "AgACAgUAAxkBAAECOw1l52J9RPNercDDNSI-2UoYH75ZOAAC-r4xG2tgQVcJBDigP808bAEAAwIAA3kAAzQE"
 
 QR_TXT = """
 Superbb..!! {} 👍, നിങ്ങൾക്ക് ആവശ്യം ഉള്ള പ്ലാൻ തുക താഴെ കാണുന്ന QR കോഡ് / UPI 🆔 ഉപയോഗിച്ച് അടക്കുക
@@ -61,9 +61,9 @@ ADMIN = 6922136309
 
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
-    await update.reply_photo(
-        photo=START_PIC,
-        caption=START_TXT.format(update.from_user.mention),
+    await update.reply_message(
+     #   photo=START_PIC,
+        text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo")
                 ],[
