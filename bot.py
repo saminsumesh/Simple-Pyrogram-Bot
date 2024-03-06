@@ -61,7 +61,7 @@ ADMIN = 6841073728
 
 @Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
-    await bor.send_message(
+    await bot.send_message(
      #   photo=START_PIC,
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
