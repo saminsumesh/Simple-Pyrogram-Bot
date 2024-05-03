@@ -11,19 +11,19 @@ api_id = int(os.environ.get("API_ID"))
         )
 #Variables
 
-#START_PIC = "AgACAgUAAxkBAAECOwFl52HxjfAOqxufAAHERWPhaKiMVRYAAvi-MRtrYEFXtauhh8XPQqcBAAMCAAN5AAM0BA"
+START_PIC = "AgACAgUAAxkBAAECOwFl52HxjfAOqxufAAHERWPhaKiMVRYAAvi-MRtrYEFXtauhh8XPQqcBAAMCAAN5AAM0BA"
 
-#DEMO_PIC = "AgACAgUAAxkBAAECOw1l52J9RPNercDDNSI-2UoYH75ZOAAC-r4xG2tgQVcJBDigP808bAEAAwIAA3kAAzQE"
+DEMO_PIC = "AgACAgUAAxkBAAECOw1l52J9RPNercDDNSI-2UoYH75ZOAAC-r4xG2tgQVcJBDigP808bAEAAwIAA3kAAzQE"
 
 QR_TXT = """
 Superbb..!! {} 👍, നിങ്ങൾക്ക് ആവശ്യം ഉള്ള പ്ലാൻ തുക താഴെ കാണുന്ന QR കോഡ് / UPI 🆔 ഉപയോഗിച്ച് അടക്കുക
 """
 
 GROUP_TXT = """
-**__⚜️ MEMBERSHIPS DETAILS ⚜️__**
+**__⚜️ RATHINIRVEDAM MEMBERSHIPS DETAILS ⚜️__**
 
  
-**• തെൻകുടം പ്രീമിയം 🔕**
+**• കേരള VIP 🌺**
  = __100 Rs__
 
 **• Leaked Videos Only 🍑🍌**
@@ -65,14 +65,12 @@ async def start(bot, update):
      #   photo=START_PIC,
         text=START_TXT.format(update.from_user.mention),
         reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("ഫ്രീ ഡെമോ 🍑", callback_data="demo")
-                ],[
-                InlineKeyboardButton("വീഡിയോസ് ഗ്രൂപ്പ് 🔞", callback_data="group")
-                ],[
-                InlineKeyboardButton("Help ❓", callback_data="help")
-                ],[
-                InlineKeyboardButton("Admin 👮‍♂️", callback_data="admin"),
-                ]]
+                InlineKeyboardButton("1) Kerala VIP", callback_data="kerala_demo"),
+                InlineKeyboardButton("2) Resmi R Nair VIP", callback_data="resmi_demo")
+        ],[
+                InlineKeyboardButton("3) Rathinirvedam Leaks", callback_data="leaks_demo"),
+                InlineKeyboardButton("4) Combo", callback_data="combo_demo")
+        ]]
         )
     )
 
